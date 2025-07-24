@@ -1,0 +1,309 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Open+Sans:wght@300;400;500;600;700&display=swap');
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  
+  /* Ayoo Smart Farm Brand Colors */
+  --color-ayoo-green: #4CAF50;
+  --color-earth-brown: #795548;
+  --color-sunshine-yellow: #FFEB3B;
+  --color-sky-blue: #03A9F4;
+  --color-leafy-green: #C8E6C9;
+  --color-off-white: #FAFAFA;
+}
+
+:root {
+  --radius: 0.625rem;
+  --background: #FAFAFA; /* Off-white background */
+  --foreground: #795548; /* Earth brown for text */
+  --card: #FFFFFF;
+  --card-foreground: #795548;
+  --popover: #FFFFFF;
+  --popover-foreground: #795548;
+  --primary: #4CAF50; /* Ayoo Green */
+  --primary-foreground: #FFFFFF;
+  --secondary: #C8E6C9; /* Leafy Light Green */
+  --secondary-foreground: #795548;
+  --muted: #C8E6C9;
+  --muted-foreground: #795548;
+  --accent: #FFEB3B; /* Sunshine Yellow */
+  --accent-foreground: #795548;
+  --destructive: #f44336;
+  --border: #E0E0E0;
+  --input: #F5F5F5;
+  --ring: #4CAF50;
+  --chart-1: #4CAF50;
+  --chart-2: #03A9F4;
+  --chart-3: #FFEB3B;
+  --chart-4: #795548;
+  --chart-5: #C8E6C9;
+  --sidebar: #FAFAFA;
+  --sidebar-foreground: #795548;
+  --sidebar-primary: #4CAF50;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #C8E6C9;
+  --sidebar-accent-foreground: #795548;
+  --sidebar-border: #E0E0E0;
+  --sidebar-ring: #4CAF50;
+}
+
+.dark {
+  --background: #1a1a1a;
+  --foreground: #FAFAFA;
+  --card: #2d2d2d;
+  --card-foreground: #FAFAFA;
+  --popover: #2d2d2d;
+  --popover-foreground: #FAFAFA;
+  --primary: #4CAF50;
+  --primary-foreground: #FFFFFF;
+  --secondary: #3a3a3a;
+  --secondary-foreground: #FAFAFA;
+  --muted: #3a3a3a;
+  --muted-foreground: #a0a0a0;
+  --accent: #FFEB3B;
+  --accent-foreground: #1a1a1a;
+  --destructive: #f44336;
+  --border: #404040;
+  --input: #404040;
+  --ring: #4CAF50;
+  --chart-1: #4CAF50;
+  --chart-2: #03A9F4;
+  --chart-3: #FFEB3B;
+  --chart-4: #795548;
+  --chart-5: #C8E6C9;
+  --sidebar: #1a1a1a;
+  --sidebar-foreground: #FAFAFA;
+  --sidebar-primary: #4CAF50;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #3a3a3a;
+  --sidebar-accent-foreground: #FAFAFA;
+  --sidebar-border: #404040;
+  --sidebar-ring: #4CAF50;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+  
+  /* Typography - Ayoo Smart Farm Brand */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-weight: 600;
+    color: var(--color-earth-brown);
+  }
+  
+  .brand-heading {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: var(--color-earth-brown);
+  }
+  
+  .brand-subheading {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    color: var(--color-earth-brown);
+  }
+  
+  .brand-body {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    color: var(--color-earth-brown);
+  }
+  
+  .brand-tagline {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--color-earth-brown);
+  }
+}
+
+/* Brand Color Classes */
+.bg-ayoo-green { background-color: var(--color-ayoo-green); }
+.bg-earth-brown { background-color: var(--color-earth-brown); }
+.bg-sunshine-yellow { background-color: var(--color-sunshine-yellow); }
+.bg-sky-blue { background-color: var(--color-sky-blue); }
+.bg-leafy-green { background-color: var(--color-leafy-green); }
+.bg-off-white { background-color: var(--color-off-white); }
+
+.text-ayoo-green { color: var(--color-ayoo-green); }
+.text-earth-brown { color: var(--color-earth-brown); }
+.text-sunshine-yellow { color: var(--color-sunshine-yellow); }
+.text-sky-blue { color: var(--color-sky-blue); }
+.text-leafy-green { color: var(--color-leafy-green); }
+
+.border-ayoo-green { border-color: var(--color-ayoo-green); }
+.border-earth-brown { border-color: var(--color-earth-brown); }
+.border-sunshine-yellow { border-color: var(--color-sunshine-yellow); }
+.border-sky-blue { border-color: var(--color-sky-blue); }
+.border-leafy-green { border-color: var(--color-leafy-green); }
+
+/* Global smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar with brand colors */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-leafy-green);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-ayoo-green);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-earth-brown);
+}
+
+/* Enhanced button interactions with brand colors */
+.btn-interactive {
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-interactive:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.25);
+}
+
+.btn-interactive:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(76, 175, 80, 0.15);
+}
+
+/* Card hover effects with brand colors */
+.card-hover {
+  transition: all 0.3s ease-in-out;
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(76, 175, 80, 0.15);
+}
+
+/* Focus styles for accessibility with brand colors */
+.focus-ring:focus {
+  outline: 2px solid var(--color-ayoo-green);
+  outline-offset: 2px;
+}
+
+/* Loading animation with brand colors */
+@keyframes pulse-brand {
+  0%, 100% {
+    opacity: 1;
+    background-color: var(--color-ayoo-green);
+  }
+  50% {
+    opacity: 0.5;
+    background-color: var(--color-leafy-green);
+  }
+}
+
+.animate-pulse-brand {
+  animation: pulse-brand 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Backdrop blur fallback with brand colors */
+.backdrop-blur-fallback {
+  background-color: rgba(250, 250, 250, 0.8);
+}
+
+@supports (backdrop-filter: blur(8px)) {
+  .backdrop-blur-fallback {
+    backdrop-filter: blur(8px);
+    background-color: rgba(250, 250, 250, 0.7);
+  }
+}
+
+/* Brand gradient backgrounds */
+.bg-brand-gradient {
+  background: linear-gradient(135deg, var(--color-ayoo-green) 0%, var(--color-leafy-green) 100%);
+}
+
+.bg-brand-gradient-warm {
+  background: linear-gradient(135deg, var(--color-sunshine-yellow) 0%, var(--color-ayoo-green) 100%);
+}
+
+.bg-brand-gradient-earth {
+  background: linear-gradient(135deg, var(--color-earth-brown) 0%, var(--color-ayoo-green) 100%);
+}
+
+.bg-brand-gradient-sky {
+  background: linear-gradient(135deg, var(--color-sky-blue) 0%, var(--color-ayoo-green) 100%);
+}
+
+/* Touch target improvements for mobile */
+@media (max-width: 768px) {
+  button, a, input, select, textarea {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  .touch-target {
+    padding: 12px;
+  }
+}
+
+
+
+/* Touch target improvements for mobile */
+@media (max-width: 768px) {
+  button, a, input, select, textarea {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  .touch-target {
+    padding: 12px;
+  }
+}
+
+
